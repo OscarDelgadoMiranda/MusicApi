@@ -3,10 +3,10 @@ Trabajo del grupo 3 de SD
 
 Componentes del grupo:
 
-**bold** Óscar Delgado Miranda  
-**bold** Miguel Ángel Pérez García  
-**bold** Ildefonso de la Cruz Romero  
-**bold** David Blanco Fuentes  
+**Óscar Delgado Miranda**    
+**Miguel Ángel Pérez García**
+**Ildefonso de la Cruz Romero**  
+**David Blanco Fuentes**  
   
 ---
 

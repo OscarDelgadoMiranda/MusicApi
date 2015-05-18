@@ -2,11 +2,11 @@
 Trabajo del grupo 3 de SD
 
 Componentes del grupo:
-  
-  Óscar Delgado Miranda
-  Miguel Ángel Pérez García
-  Ildefonso de la Cruz Romero
-  David Blanco Fuentes
+
+Óscar Delgado Miranda
+Miguel Ángel Pérez García
+Ildefonso de la Cruz Romero
+David Blanco Fuentes
   
 
 En este proyecto trabajamos con las Apis de Soundcloud, Dropbox y Twitter, así como con los lenguajes python, html, css y javascript.

@@ -1,0 +1,52 @@
+<html>
+	<body>
+		<head> 
+			<title>MusicApi</title>
+			<link href="https://raw.githubusercontent.com/OscarDelgadoMiranda/css/master/style.css" rel="stylesheet" type="text/css">
+		</head>         
+		<h1 align="center">Busca tus canciones</h1>
+		<script>
+			function urlstr()
+			{
+				var cad = document.getElementById("buscar").value;
+				var str = "/buscar/stream/";
+				return str + cad;
+			}
+			
+			function urlall()
+			{
+				var cad = document.getElementById("buscar").value;
+				var all = "/buscar/all/";
+				return all + cad;
+			}
+		
+			function enviar(pagina)
+			{
+				document.busqueda.action = pagina;
+				document.busqueda.submit();
+			}
+		</script>
+		<ul>
+			<table border="0" cellspacing="4">
+				<tr>
+					<td><input type="text" id="buscar" name="q" value="" size="44"/></td>
+				</tr>
+				<tr>
+					<form name="busqueda" action="" method="post">
+						<td><input class="mainbutton" type="button" value="Buscar" onClick="enviar(urlall())">
+							<input class="mainbutton" type="button" value="Buscar streaming" onClick="enviar(urlstr())"></td>
+					</form>
+				</tr>
+			</table>
+		</ul>
+		
+		<ul>
+			<p><font size="5">1. Introduce el artista, album o cancion que deseas buscar</font></p>
+			<p><font size="5">2. Elige si deseas buscar unicamente para oirlo en streaming o si ademas quieres la posibilidad de descargar</font></p>
+			<p><font size="5">3. Puedes guardar en Dropbox toda la musica que hayas descargado (primero tienes que autentificarte)</font></p>
+			<p><font size="5">4. Ademas, puedes compartir por Twitter la musica que estas oyendo/descargando</font></p>
+		</ul>
+		
+		<footer id="main-footer"><p>&copy; Todos los derechos reservados.</p></footer>
+	</body>
+</html>

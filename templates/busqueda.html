@@ -1,0 +1,93 @@
+<html>
+	<body>
+		<head> 
+			<title>MusicApi</title>
+			<link href="https://raw.githubusercontent.com/OscarDelgadoMiranda/css/master/style.css" rel="stylesheet" type="text/css">
+		</head>
+
+		<h1>Busca tus canciones</h1>
+		
+		<script>
+			function urlstr()
+			{
+				var cad = document.getElementById("buscar").value;
+				var str = "/buscar/stream/";
+				return str + cad;
+			}
+			
+			function urlall()
+			{
+				var cad = document.getElementById("buscar").value;
+				var all = "/buscar/all/";
+				return all + cad;
+			}
+		
+			function enviar(pagina)
+			{
+				document.busqueda.action = pagina;
+				document.busqueda.submit();
+			}
+
+			function subir()
+			{
+				return "/guardar"
+			}
+		</script>
+		
+		<ul>
+			<table border="0" cellspacing="4">
+				<tr>
+					<td><input type="text" id="buscar" name="q" value="" height="15" size="44"/></td>
+				</tr>
+				<tr></tr>
+				<tr>
+					<form name="busqueda" action="" method="post">
+						<td><input class="mainbutton" type="button" value="Buscar" onClick="enviar(urlall())">
+							<input class="mainbutton" type="button" value="Buscar streaming" onClick="enviar(urlstr())"></td>
+					</form>
+				</tr>
+			</table>
+		</ul>
+		
+		<ul>
+			<table border="0">
+			{% for i in range(tam_) %}
+				<tr>
+					<td><input class="button" type="button" value="Download" onClick="window.open('{{ enlaces_download[i] }}')"></td>
+					<td><audio controls>
+						<source src= {{ enlaces_stream[i] }} type="audio/mpeg" />
+					</audio></td>
+					<td>{{ titulos[i] }}
+					<a href="https://twitter.com/share" class="twitter-share-button" data-url={{ enlaces_download[i] }} data-text="Me he descargado de #MusicApi " data-count="none">Tweet</a>
+					<script>
+						!function(d,s,id)
+						{
+							var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+							if(!d.getElementById(id))
+							{
+								js=d.createElement(s);
+								js.id=id;
+								js.src=p+'://platform.twitter.com/widgets.js';
+								fjs.parentNode.insertBefore(js,fjs);
+							}
+						}(document, 'script', 'twitter-wjs');
+					</script></td>
+				</tr>
+			{% endfor %}
+			</table>
+		</ul>
+		
+		<ul>
+			<table border="0">
+				<tr>
+					<td><input class="mainbutton" type="button" value="Autentificar dropbox" onClick="window.open('{{ auth_drop }}')">
+						<input class="mainbutton" type="button" value="Subir a dropbox" onClick="enviar(subir())"></td>
+				</tr>
+			</table>
+		</ul>
+		
+		<footer id="main-footer"><p>&copy; Todos los derechos reservados.</p></footer>
+	</body>
+</html>
+
+
